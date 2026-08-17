@@ -1,0 +1,20 @@
+# Target directories & build files
+target/
+backend/target/
+frontend/dist/
+frontend/node_modules/
+
+# Environment files
+.env
+*.local
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.DS_Store
+
+# Logs
+*.log
+logs/
