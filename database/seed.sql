@@ -30,12 +30,12 @@ INSERT INTO students (id, user_id, roll_number, department, year_of_study, emerg
 (3, 5, 'ME2024012', 'Mechanical Engg', 4, '+1987654323', '789 Pine Road, Hillview');
 
 -- 3. Insert Rooms
-INSERT INTO rooms (id, room_number, block_name, capacity, current_occupancy, room_type, status) VALUES
-(1, 'A-101', 'Block A', 2, 2, 'STANDARD', 'FULL'),
-(2, 'A-102', 'Block A', 2, 1, 'STANDARD', 'AVAILABLE'),
-(3, 'B-201', 'Block B', 1, 0, 'DELUXE', 'AVAILABLE'),
-(4, 'B-202', 'Block B', 2, 0, 'STANDARD', 'MAINTENANCE'),
-(5, 'C-301', 'Block C', 3, 0, 'STANDARD', 'AVAILABLE');
+INSERT INTO rooms (id, room_number, block_name, floor, capacity, current_occupancy, room_type, status) VALUES
+(1, 'A-101', 'Block A', 1, 2, 2, 'STANDARD', 'FULL'),
+(2, 'A-102', 'Block A', 1, 2, 1, 'STANDARD', 'AVAILABLE'),
+(3, 'B-201', 'Block B', 2, 1, 0, 'DELUXE', 'AVAILABLE'),
+(4, 'B-202', 'Block B', 2, 2, 0, 'STANDARD', 'MAINTENANCE'),
+(5, 'C-301', 'Block C', 3, 3, 0, 'STANDARD', 'AVAILABLE');
 
 -- 4. Insert Room Allocations
 INSERT INTO room_allocations (id, student_id, room_id, allocation_date, vacate_date, status) VALUES

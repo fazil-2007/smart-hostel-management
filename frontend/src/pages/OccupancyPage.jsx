@@ -22,6 +22,7 @@ export const OccupancyPage = () => {
   const columns = [
     { header: 'Room No', accessor: 'roomNumber' },
     { header: 'Block', accessor: 'blockName' },
+    { header: 'Floor', render: (r) => `Floor ${r.floor !== undefined ? r.floor : 1}` },
     { header: 'Type', accessor: 'roomType' },
     { header: 'Capacity', accessor: 'capacity' },
     { header: 'Occupants', accessor: 'currentOccupancy' },

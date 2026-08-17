@@ -23,6 +23,18 @@ public class RoomAllocationController {
         return ResponseEntity.ok(allocationService.getAllAllocations());
     }
 
+    @GetMapping("/student/{studentId}")
+    public ResponseEntity<List<RoomAllocation>> getStudentAllocations(@PathVariable Long studentId) {
+        return ResponseEntity.ok(allocationService.getStudentAllocations(studentId));
+    }
+
+    @GetMapping("/student/{studentId}/active")
+    public ResponseEntity<RoomAllocation> getStudentActiveAllocation(@PathVariable Long studentId) {
+        return allocationService.getStudentActiveAllocation(studentId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     public ResponseEntity<RoomAllocation> allocateRoom(@RequestBody Map<String, Long> payload) {
         Long studentId = payload.get("studentId");

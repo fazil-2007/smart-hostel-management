@@ -43,6 +43,7 @@ CREATE TABLE rooms (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     room_number VARCHAR(20) NOT NULL UNIQUE,
     block_name VARCHAR(20) NOT NULL,
+    floor INT NOT NULL DEFAULT 1,
     capacity INT NOT NULL DEFAULT 2,
     current_occupancy INT NOT NULL DEFAULT 0,
     room_type VARCHAR(30) DEFAULT 'STANDARD', -- 'SINGLE', 'DOUBLE', 'DELUXE'

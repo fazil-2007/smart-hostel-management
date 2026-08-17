@@ -17,6 +17,9 @@ public class Room {
     private String blockName;
 
     @Column(nullable = false)
+    private Integer floor = 1;
+
+    @Column(nullable = false)
     private Integer capacity = 2;
 
     @Column(name = "current_occupancy", nullable = false)
@@ -30,14 +33,19 @@ public class Room {
 
     public Room() {}
 
-    public Room(Long id, String roomNumber, String blockName, Integer capacity, Integer currentOccupancy, String roomType, String status) {
+    public Room(Long id, String roomNumber, String blockName, Integer floor, Integer capacity, Integer currentOccupancy, String roomType, String status) {
         this.id = id;
         this.roomNumber = roomNumber;
         this.blockName = blockName;
+        this.floor = floor;
         this.capacity = capacity;
         this.currentOccupancy = currentOccupancy;
         this.roomType = roomType;
         this.status = status;
+    }
+
+    public Room(Long id, String roomNumber, String blockName, Integer capacity, Integer currentOccupancy, String roomType, String status) {
+        this(id, roomNumber, blockName, 1, capacity, currentOccupancy, roomType, status);
     }
 
     public Long getId() { return id; }
@@ -48,6 +56,9 @@ public class Room {
 
     public String getBlockName() { return blockName; }
     public void setBlockName(String blockName) { this.blockName = blockName; }
+
+    public Integer getFloor() { return floor; }
+    public void setFloor(Integer floor) { this.floor = floor; }
 
     public Integer getCapacity() { return capacity; }
     public void setCapacity(Integer capacity) { this.capacity = capacity; }
