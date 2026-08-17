@@ -23,17 +23,25 @@ public class Attendance {
     @Column(nullable = false, length = 20)
     private String status = "PRESENT"; // 'PRESENT', 'ABSENT', 'LATE', 'ON_LEAVE'
 
+    @Column(name = "recorded_by", length = 100)
+    private String recordedBy = "Warden";
+
     @Column(length = 255)
     private String remarks;
 
     public Attendance() {}
 
-    public Attendance(Long id, Student student, LocalDate date, String status, String remarks) {
+    public Attendance(Long id, Student student, LocalDate date, String status, String recordedBy, String remarks) {
         this.id = id;
         this.student = student;
         this.date = date;
         this.status = status;
+        this.recordedBy = recordedBy;
         this.remarks = remarks;
+    }
+
+    public Attendance(Long id, Student student, LocalDate date, String status, String remarks) {
+        this(id, student, date, status, "Warden", remarks);
     }
 
     public Long getId() { return id; }
@@ -47,6 +55,9 @@ public class Attendance {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public String getRecordedBy() { return recordedBy; }
+    public void setRecordedBy(String recordedBy) { this.recordedBy = recordedBy; }
 
     public String getRemarks() { return remarks; }
     public void setRemarks(String remarks) { this.remarks = remarks; }

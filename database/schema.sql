@@ -68,6 +68,7 @@ CREATE TABLE attendance (
     student_id BIGINT NOT NULL,
     date DATE NOT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'PRESENT', -- 'PRESENT', 'ABSENT', 'LATE', 'ON_LEAVE'
+    recorded_by VARCHAR(100) DEFAULT 'Warden',
     remarks VARCHAR(255),
     UNIQUE KEY unique_student_date (student_id, date),
     FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE

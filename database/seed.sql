@@ -44,12 +44,12 @@ INSERT INTO room_allocations (id, student_id, room_id, allocation_date, vacate_d
 (3, 3, 2, '2025-08-05', NULL, 'ACTIVE');
 
 -- 5. Insert Attendance Records
-INSERT INTO attendance (id, student_id, date, status, remarks) VALUES
-(1, 1, CURRENT_DATE(), 'PRESENT', 'On time'),
-(2, 2, CURRENT_DATE(), 'PRESENT', 'On time'),
-(3, 3, CURRENT_DATE(), 'LATE', 'Returned at 10:15 PM'),
-(4, 1, DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY), 'PRESENT', 'Normal entry'),
-(5, 2, DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY), 'ABSENT', 'Permission granted for home visit');
+INSERT INTO attendance (id, student_id, date, status, recorded_by, remarks) VALUES
+(1, 1, CURRENT_DATE(), 'PRESENT', 'Dr. Robert Vance', 'On time'),
+(2, 2, CURRENT_DATE(), 'PRESENT', 'Dr. Robert Vance', 'On time'),
+(3, 3, CURRENT_DATE(), 'LATE', 'Dr. Robert Vance', 'Returned at 10:15 PM'),
+(4, 1, DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY), 'PRESENT', 'Dr. Robert Vance', 'Normal entry'),
+(5, 2, DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY), 'ABSENT', 'Dr. Robert Vance', 'Permission granted for home visit');
 
 -- 6. Insert Maintenance Requests
 INSERT INTO maintenance_requests (id, student_id, room_id, category, description, status, priority, created_at) VALUES
